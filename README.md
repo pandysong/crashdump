@@ -1,6 +1,6 @@
 # crash dump tool
 
-Often are log like blow is caputred in the linux console:
+Often log like blow is captured in the Linux console:
 
 ```
 <4>[ 2240.408003] [<c0014088>] (unwind_backtrace+0x0/0xe0) from [<c00118cc>] (show_stack+0x10/0x14)
@@ -26,8 +26,8 @@ used to locate in the source code.
 python3 crashdump.py <log.txt> <elf_file>
 ```
 
-<log.txt> is the file containing the logs shown above.
-<elf_file> is the elf binary file, like `vmlinux`.
+- <log.txt> is the file containing the logs shown above.
+- <elf_file> is the elf binary file, like `vmlinux`.
 
 
 The output might be like:
@@ -51,4 +51,3 @@ You may save above output to a file, and then in Vim, you could load and parse t
 ```
 :cfile <the_out_put_file>
 ```
-
