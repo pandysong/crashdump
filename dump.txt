@@ -1,0 +1,10 @@
+<4>[ 2240.408003] [<c0014088>] (unwind_backtrace+0x0/0xe0) from [<c00118cc>] (show_stack+0x10/0x14)
+<4>[ 2240.408041] [<c00118cc>] (show_stack+0x10/0x14) from [<c00443ec>] (warn_slowpath_common+0x4c/0x68)
+<4>[ 2240.408118] [<c0044420>] (warn_slowpath_null+0x18/0x1c) from [<c0703c50>] (clk_disable+0x18/0x24)
+<4>[ 2240.408201] [<c06336b4>] (rk_camera_mclk_ctrl+0x300/0x39c) from [<c003f5a8>] (rk_sensor_ioctrl+0x1ec/0x26c)
+<4>[ 2240.408281] [<c003f844>] (rk_sensor_pwrseq+0x1b4/0x230) from [<c003fae0>] (rk_sensor_power+0x220/0x2dc)
+<4>[ 2240.408361] [<c0624108>] (soc_camera_power_off+0x20/0x70) from [<c0635b58>] (generic_sensor_s_power+0xd4/0xfc)
+<4>[ 2240.408438] [<c06225bc>] (__soc_camera_power_off+0x3c/0x78) from [<c0623d64>] (soc_camera_close+0x74/0xb0)
+<4>[ 2240.408518] [<c060b52c>] (v4l2_release+0x34/0x70) from [<c0120234>] (__fput+0xe8/0x1ec)
+<4>[ 2240.408592] [<c0061478>] (task_work_run+0xbc/0xd4) from [<c0011178>] (do_work_pending+0x80/0x94)
+
