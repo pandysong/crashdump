@@ -59,7 +59,14 @@ def print_crash_dump(addr, l, elf):
     if len(so) != 2:
         print(so)
         return
-    print("{}: {}".format(so[1], l), end="")
+    # the line may includes more string after the line number
+    # we have to insert the ":" just after line number.
+    colon = so[1].find(' ')
+    if colon < 0:
+        out = so[1] + ":"
+    else:
+        out = so[1][0:colon] + ":" + so[1][colon:]
+    print("{} {}".format(out, l), end="")
 
 
 lines = open(sys.argv[1]).readlines()
