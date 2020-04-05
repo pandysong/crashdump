@@ -14,6 +14,43 @@ Often log like blow is captured in the Linux console:
 <4>[ 2240.408592] [<c0061478>] (task_work_run+0xbc/0xd4) from [<c0011178>] (do_work_pending+0x80/0x94)
 ```
 
+or a logcat printing in Android
+
+```
+/home/pandy/rk3368_9/u-boot/lib/string.c:283 (discriminator 3): [< 00280824 >]
+/home/pandy/rk3368_9/u-boot/lib/vsprintf.c:598: [< 00281c9c >]
+/home/pandy/rk3368_9/u-boot/lib/vsprintf.c:696: [< 00281ef4 >]
+/home/pandy/rk3368_9/u-boot/lib/vsprintf.c:768: [< 002820e4 >]
+/home/pandy/rk3368_9/u-boot/arch/arm/mach-rockchip/resource_img.c:119 (discriminator 4): [< 00203e94 >]
+/home/pandy/rk3368_9/u-boot/arch/arm/mach-rockchip/resource_img.c:180: [< 002042a0 >]
+/home/pandy/rk3368_9/u-boot/arch/arm/mach-rockchip/resource_img.c:349: [< 00204340 >]
+/home/pandy/rk3368_9/u-boot/arch/arm/mach-rockchip/resource_img.c:646: [< 002044a8 >]
+/home/pandy/rk3368_9/u-boot/arch/arm/mach-rockchip/board.c:172: [< 00202da4 >]
+/home/pandy/rk3368_9/u-boot/arch/arm/mach-rockchip/board.c:218: [< 00202e4c >]
+/home/pandy/rk3368_9/u-boot/lib/initcall.c:45: [< 0026a720 >]
+/home/pandy/rk3368_9/u-boot/common/board_r.c:999: [< 00212f24 >]
+/home/pandy/rk3368_9/u-boot/arch/arm/lib/crt0_64.S:143: [< 00201b2c >]
+```
+
+or a crash dump in u-boot
+
+```
+Stack:
+[8C[< 00280824 >]
+[8C[< 00281c9c >]
+[8C[< 00281ef4 >]
+[8C[< 002820e4 >]
+[8C[< 00203e94 >]
+[8C[< 002042a0 >]
+[8C[< 00204340 >]
+[8C[< 002044a8 >]
+[8C[< 00202da4 >]
+[8C[< 00202e4c >]
+[8C[< 0026a720 >]
+[8C[< 00212f24 >]
+[8C[< 00201b2c >]
+```
+
 It is quite tedious to analyse line by line.
 
 The tool is used to convert numbers to file name and line number which could be
@@ -23,7 +60,7 @@ used to locate in the source code.
 
 
 ```
-python3 crashdump.py <log.txt> <elf_file>
+python3 crashdump.py <log.txt> <elf_file_or_path>
 ```
 
 - <log.txt> is the file containing the logs shown above.
